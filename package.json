@@ -7,10 +7,13 @@
 	},
 	"dependencies": {
 		"express": "4.12.x",
-		"cfenv": "1.0.x"
+		"cfenv": "1.0.x",
+		"multer": "^1.1.0",
+		"body-parser": "^1.14.2",
+		"watson-developer-cloud": "*"
 	},
 	"repository": {},
 	"engines": {
 		"node": "0.12.x"
-	} 
+	}
 }
