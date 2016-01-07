@@ -1,15 +1,8 @@
 
-FROM centos:centos6
-RUN curl -sL https://rpm.nodesource.com/setup | bash -
-RUN yum install -y nodejs  #
-# Define working directory.
-COPY ./ /src/
-WORKDIR /src
-
-RUN npm install
-RUN npm run build
-
-EXPOSE 3000 8020
-# Define default command.
-CMD ["node", "app.js"]
-
+FROM registry.ng.bluemix.net/ibmnode:latest
+#COPY <public_key_file_name> /root/.ssh/authorized_keys
+COPY ./ /opt/node
+WORKDIR /opt/node
+RUN npm install -d --production
+EXPOSE 8000 22
+CMD ["node", "/opt/node/app.js"]
